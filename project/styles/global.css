@@ -1,0 +1,24 @@
+:root{
+    --background-color: #323232;
+    --primary-color: #ffff00;
+    --secondary-color: rgb(79, 130, 2);
+    --band-name-header-size: 30vh;
+}
+
+*{
+    box-sizing: border-box;
+    font-family: Bebas Neue;
+    color: rgb(255, 255, 255);
+}
+
+html { scroll-behavior: smooth; }
+
+a{
+    text-decoration: none;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: rgb(50, 50, 50);
+}

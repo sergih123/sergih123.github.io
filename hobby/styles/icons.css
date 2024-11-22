@@ -1,0 +1,27 @@
+/* FOR SVG ICONS */
+.icon-container{
+    padding: 10px;
+    float: left;
+    content: '';
+    display: block;
+    width: 1em;
+    height: 1em;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.icon-arrow{
+    display: block;
+    /* background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-right" width="64" height="64" viewBox="0 0 24 24" stroke-width="2" stroke="%23000000" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l14 0" /><path d="M13 18l6 -6" /><path d="M13 6l6 6" /></svg>'); */
+    font-size: 5em;
+    /* background-color: #FFFFFF; */
+background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-right" width="64" height="64" viewBox="0 0 24 24" stroke-width="2" stroke="%23000000" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l14 0" /><path d="M13 18l6 -6" /><path d="M13 6l6 6" /></svg>');
+/* background-attachment: fixed | scroll; */
+/* background-size: auto | cover | contain | 500px 250px; */
+/* background-position: center | right 30px bottom 15px; */
+/* background-repeat: no-repeat | repeat | repeat-x; */
+/* background-origin: border-box | padding-box | content-box; */
+/* background-clip: border-box | padding-box | content-box; */
+/* background-blend-mode: multiply | screen | overlay; */
+    
+}

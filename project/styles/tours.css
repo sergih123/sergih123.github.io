@@ -1,0 +1,61 @@
+body{
+    background-color: transparent;
+}
+
+h1{
+    font-size: 7rem;
+    text-align: center;
+}
+
+#tours-table{
+    width: 100%;
+    font-size: 1.8em;
+}
+#tours-table thead tr th{
+    margin: 100%;
+}
+#tours-table td{
+    text-align: center;
+}
+
+h4{
+    text-align: center;
+}
+
+.divider{
+    display: block;
+    background-color: grey;
+    height: 2px;
+    width: 70%;
+    align-items: center;
+    margin: 5% auto;
+}
+
+p{
+    text-align: center;
+}
+
+form{
+    text-align: center;
+    margin-bottom: 10%;
+}
+p, form label, form input{
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0.8rem;
+}
+form input{
+    background-color: rgb(74, 74, 74);
+    border: 0;
+    border-radius: 0.5em 0.5em 0.5em 0.5em;
+}
+form input[type="email"]{
+    width: 25%;
+}
+
+
+@media (max-width: 768px){
+    h1{
+        font-size: 4rem;
+    }
+}

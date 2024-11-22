@@ -1,0 +1,335 @@
+* {
+    font-family: Bebas Neue;
+    font-size: 1.2em;
+    box-sizing: border-box;
+}
+
+body{
+    /* margin: 0px; si queda mal */
+}
+
+a {
+    text-decoration: none;
+    color: inherit; /*Sets colour back to default*/
+}
+
+.menu-icon {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 30px;
+    margin-left: 30px;
+}
+
+nav span{
+    width: 30px;
+    height: 5px;
+    background-color: black;
+}
+
+nav ul{
+    display: flex;
+    flex-direction: row;
+}
+
+nav ul li{
+    list-style: none;
+}
+
+nav a{
+    margin-left: 0.3em;
+    margin-right: 0.3em;
+}
+
+.drawing {
+    display: flex;
+    flex-direction: column;
+    width: 31%;
+    margin: 0.8vw;
+    padding: 0.5em;
+    height: 80vh;
+    aspect-ratio: auto;
+}
+
+.drawing-header{
+    display: flexbox;
+    flex-direction: column;
+    align-content: center;
+    justify-content: space-evenly;
+}
+.drawing-header h1 {
+    font-size: 5em;
+    text-align: center;
+    margin-bottom: 0em;
+}
+.drawing-header p {
+    font-family: Spectral;
+    text-align: center;
+    margin-top: 0;
+}
+
+.drawing-list { 
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+
+}
+
+
+.drawing p{
+    margin: 0;
+}
+
+.drawing .place,.date,.subtitle{
+    font-family: Spectral;
+}
+
+.drawing .place{
+    font-size: 0.6em;
+}
+.drawing .date{
+    font-size: 0.6em;
+}
+.drawing .title{
+    padding-top: 0.4em;
+    font-size: 1.5em;
+}
+.drawing .subtitle{
+    font-style: italic;
+    line-height: 1em;
+    padding-bottom: 1em;
+    letter-spacing: -0.05em;
+    color:rgb(52, 52, 52)
+}
+
+.drawing img {
+    object-fit: contain;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    overflow: hidden;
+    margin-top: auto;
+}
+
+/* ------------- */
+
+.inspirations{
+    display: grid;
+    grid-template-columns: 28.6vw 62.1vw;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    margin-top: 8vh;
+    overflow: hidden;
+}
+
+.inspirations #description h2{
+    margin-top: 0;
+    margin-bottom: 0.5em;
+}
+
+.inspirations #description p{
+    font-family: Spectral;
+    font-size: 0.6em;
+    padding-right: 20%;
+}
+
+.inspirations #list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.inspiration{
+    height: 50vh;
+    width: 46%;
+    overflow: hidden;
+}
+
+
+.inspiration .img-container{
+    height: 75%;
+    overflow: hidden;
+}
+
+.inspiration .img-container img{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.inspiration h3{
+    font-size: 1.2em;
+}
+
+.inspirations #list .inspiration img{
+    
+}
+#footer-divider{
+    background-color: black;
+    width: 80%;
+    height: 0.03em;
+    margin: 5% auto;
+    display: block;
+
+}
+
+.footer{
+    display: flex;
+    font-size: 1.2rem;
+    margin-top: 1.5em;
+}
+.footer div{
+    display: flex;
+    flex-direction: column;
+    margin-right: 10%;
+    margin-left: 1%;
+}
+.footer div:nth-child(3){
+    margin-left: auto;
+    margin-right: 1%;
+}
+
+
+
+
+
+
+
+/*---------------MEDIA QUERIES-------------*/
+@media(max-width: 768px){ /*PHONE*/
+    
+    .drawing{
+        height: auto;
+    }
+    .drawing-header h1{
+        margin-top: 0.3em;
+        font-size: 3.7em;
+    }
+
+    .nav-links{
+        display: none;
+        transition: transform 0.3s ease;
+    }
+
+    .nav-links.active{
+        display: flex;
+        flex-direction: column;
+        transform: translate(30px);
+    } 
+
+    .nav-links a:nth-child(2){
+        display: none;
+    }
+    .nav-links a:nth-child(3){
+        display: none;
+    }
+    
+    .menu-icon{
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .menu-icon span{
+        transition: all 0.3s ease;
+        gap: 5px;
+        width: 25px;
+        height: 3px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .menu-icon.active span:nth-child(2){
+        opacity: 0;
+    }
+    .menu-icon.active span:nth-child(1){
+        transform: rotate(45deg);
+        position: relative;
+        top: 8px;
+    }
+    .menu-icon.active span:nth-child(3){
+        transform: rotate(-45deg);
+        position: relative;
+        top: -8px;
+    }
+
+    .drawing{
+        width:90%;
+        margin-bottom: 5vh;
+    }
+    
+    .inspirations{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .inspirations #description p{
+        padding-right: 0%;
+        padding-bottom: 2em;
+    }
+
+    .inspiration{
+        width: 90vw;
+    }
+    .inspiration h3 {
+        font-size: 0.8em;
+      }
+
+    .footer{
+        flex-wrap: wrap;   
+    }
+
+    .footer a{
+        font-size: 0.7em;
+    }
+}
+
+/* --------------ANIMATIONS-------------- */
+.drawing{
+    transition: transform 0.3s ease;
+}
+
+.drawing:hover{
+    transform: scale(1.05);
+    /* z-index: 1; */
+}
+
+a{
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+a:hover{
+    transform: scale(1.05);
+}
+
+
+/* TODO */
+/* -----------PRUEBA---------- */
+#prueba{
+    border: 10px;
+    border-color: black;
+    border-radius: 10px;
+    width: 500px;
+    height: 500px;
+    border-style: solid;
+
+    display: flex;
+    flex-direction: column;
+    
+}
+
+#prueba .uno, .dos, .tres{
+    border: 8px;
+    border-radius: 10px;
+    border-color: grey;
+    width: 100px;
+    height: 100px;
+    border-style: solid;
+}
+
+#prueba .tres{
+    margin-top: auto;
+}

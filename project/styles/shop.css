@@ -1,0 +1,99 @@
+body{
+    /*TODO:  REMOVE background-color: black BEFORE GIVE-IN */
+    background-color: transparent;
+}
+
+h1{
+    /* Hidden for non accessibility-tools users*/
+    font-size: 0em;
+}
+
+.shop-nav{
+    /* position: fixed; */
+    /* top: 0; */
+    height: 10%;
+    width: 100%;
+    z-index: 1;
+    background-color: grey;
+}
+nav{
+    margin: 3%;
+    display: flex;
+    justify-content: space-around;
+    font-size: 2em;
+}
+
+
+.shop-type{
+    /* position: absolute; */
+    text-align: center;
+    font-size: 3rem;
+    width: 100%;
+    margin-top: 2em;
+}
+.shop-display{
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.shop-display .item{
+    width: 25%;
+    margin: 3%;
+    margin-top: 10%;
+    transition: transform 0.5s;
+}
+.shop-display .item:hover{
+    transform: scale(1.2);
+}
+.shop-display .item .name{
+    font-size: 2em;
+}
+.shop-display .item .price{
+    font-size: 1.75em;
+}
+.shop-display .item .picture-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    width: 100%;
+    height: 82%;
+    margin-bottom: 0.5rem;
+    /* height: 100%; */
+}
+.shop-display .item .picture-wrapper img{
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+
+@media (max-width: 768px){
+    .shop-nav{
+        height: 10%;
+    }
+    nav{
+        margin: 3%;
+        flex-wrap: wrap;
+        font-size: 1.5em;
+    }
+
+    
+    .shop-type{
+        font-size: 3rem;
+        margin: 0.1em;
+        margin-bottom: -0.5em;
+    }
+    .shop-display{
+        position: relative;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+    .shop-display .item .name{
+        font-size: 1em;
+    }
+    .shop-display .item .price{
+        font-size: 0.75em;
+    }
+}

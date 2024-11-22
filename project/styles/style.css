@@ -1,0 +1,629 @@
+:root{
+    --background-color: #323232;
+    --primary-color: #ffff00;
+    --band-name-header-size: 30vh;
+
+    /* Shadow-text-options */
+    --big-shad-space: 35vw;
+    --shad-offset: 7.5vw;
+    /* Load Cover Options */
+    --load-cover-width: calc(var(--big-shad-space) * 2 + var(--shad-offset)*4.5);
+}
+
+/* This is to disallow the user form scrolling past the body */
+html{
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+body{
+    max-width: 100%;
+    overflow-x: hidden;
+}
+/* ^^^until here^^^ */
+
+*{
+    box-sizing: border-box;
+    font-family: Bebas Neue;
+    color: rgb(255, 255, 255);
+}
+
+a{
+    text-decoration: none;
+}
+
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: rgb(50, 50, 50);
+}
+
+.header{
+    height: 5vh;
+}
+
+.main-area{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 100vh;
+}
+
+/* ------MAIN BAND NAME------ */
+.background{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+}
+.background .band-name{
+    position: relative;
+    z-index: 0;
+    transform-origin: top;
+    width: 100vw;
+    margin-top: 0vh;
+    text-align: center;
+    transition: rotate 3s, margin-left 3s, margin-top 3s, width 3s;
+}
+
+.background .band-name.unfocused{
+    margin-left: -50vh;
+    margin-top: 50vh;
+    rotate: -90deg;
+    height: fit-content;
+    width: 100vh;
+    transform-origin: top;
+    text-align: center;
+}
+
+.background .band-name h1 {
+    position: relative;
+    font-size: var(--band-name-header-size);
+    z-index: 10;
+    margin: 0;
+    color: white;
+    text-shadow:
+        0 9vh 0 grey, 
+        0 18vh 0 rgba(128, 128, 128, 0.8), 
+        0 27vh 0 rgba(128, 128, 128, 0.6),
+        0 36vh 0 rgba(128, 128, 128, 0.4),
+        0 45vh 0 rgba(128, 128, 128, 0.2),
+        0 54vh 0 rgba(128, 128, 128, 0.1);
+    animation: band-name-shadow-fade-in 3s;
+    transition: text-shadow 3s, font-size 3s;
+}
+.background .band-name.unfocused h1{
+    text-shadow:  
+    0 1vw 0 grey, 
+    0 2vw 0 rgba(128, 128, 128, 0.8), 
+    0 4vw 0 rgba(128, 128, 128, 0.6),
+    0 6vw 0 rgba(128, 128, 128, 0.4),
+    0 8vw 0 rgba(128, 128, 128, 0.2),
+    0 10vw 0 rgba(128, 128, 128, 0.1);
+    font-size: 27cqh;  /* Me he dado cuenta de que hay que separar el `-` y el numero con un espacio, si no no funciona. */
+    z-index: 10;
+    position: relative;   
+}
+.background .transition-background{
+    position: absolute;
+    z-index: 4;
+    background-color: var(--background-color);
+    background: linear-gradient(180deg, var(--background-color) 0%, var(--background-color) 75%, rgba(0,212,255,0) 100%);
+    background-color: grad;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* -----------VINYL----------- */
+
+.vinyl {
+    z-index: 6;
+    display: flex;
+    /* max-width: 70vw;
+    max-height: 70vh; */
+    height: 70vh;
+    width:  70vh;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-top: 5%;
+    animation: vinyl-fade-in 3s;
+    transition: rotate 3s, margin-right 3s,margin-bottom 3s, width 3s, height 3s;
+}
+
+.vinyl.unfocused{
+    margin-right: -100vw;
+    rotate: -90deg;
+    width:  45vw;
+    height: 45vw;
+
+}
+
+.vinyl .vinyl-nav{
+    width: 90%;
+    height: 90%;
+    justify-content: space-around;
+    position: absolute;
+    z-index: 1;
+    font-size: 2em;
+}
+.vinyl .vinyl-nav a{
+    color: rgb(72, 72, 72);
+    position: absolute;
+    /* text-shadow: 5 100  black; */
+    transition: transform 0.3s ease;
+    font-size: 1.2em;
+    
+}
+.vinyl .vinyl-nav a:hover{
+    transform: scale(1.25);
+}
+.vinyl .vinyl-nav a:nth-child(1){
+    margin-top: 0%;
+    margin-left: 0%;
+    transform: rotate(0deg);
+}
+.vinyl .vinyl-nav a:nth-child(2){
+    margin-top: 0%;
+    margin-left: 0%;
+    transform: rotate(0deg);
+}
+.vinyl .vinyl-nav a:nth-child(3){
+    margin-top: 0%;
+    margin-left: 0%;
+    transform: rotate(0deg);
+}
+.vinyl .vinyl-nav a:nth-child(4){
+    margin-top: 0%;
+    margin-left: 0%;
+    transform: rotate(0deg);
+}
+
+
+.vinyl .outer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:  100%;
+    height: 100%;
+    background-color: rgb(255, 255, 0);
+    border-radius: 100%;
+    z-index: 0;
+    animation: vinyl-rotate 6s linear infinite; 
+}
+.vinyl .outer .grooves{
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+.vinyl .grooves .groove{
+    position: absolute;
+    
+    border-radius: 100%;
+    height: 90%;
+    width:  90%;
+    z-index: 1;
+}
+.vinyl .grooves :nth-child(odd){
+    background-color: rgb(81, 81, 0);
+}
+.vinyl .grooves :nth-child(even){
+    background-color: rgb(255, 255, 0);
+}
+.vinyl .grooves :nth-child(1){
+    width:  90%;
+    height: 90%;
+}
+.vinyl .grooves :nth-child(2){
+    width:  89.7%;
+    height: 89.7%;
+}
+.vinyl .grooves :nth-child(3){
+    width:  78%;
+    height: 78%;
+}
+.vinyl .grooves :nth-child(4){
+    width:  77.5%;
+    height: 77.5%;
+}
+.vinyl .grooves :nth-child(5){
+    width:  67%;
+    height: 67%;
+}
+.vinyl .grooves :nth-child(6){
+    width:  66.5%;
+    height: 66.5%;
+}
+.vinyl .grooves :nth-child(7){
+    width:  55%;
+    height: 55%;
+}
+.vinyl .grooves :nth-child(8){
+    width:  54.5%;
+    height: 54.5%;
+}
+.vinyl .grooves :nth-child(9){
+    width:  43%;
+    height: 43%;
+    background-color: rgb(60, 60, 60);
+}
+.vinyl .grooves :nth-child(10){
+    width:  0%;
+    height: 30%;
+    background-color: black;
+}
+
+.vinyl .inner{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    width: 38.7%;
+    height: 38.7%;
+    background-color: black;
+    border-radius: 100%;
+    z-index: 1;
+}
+.vinyl .inner .bottom{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    height: 50%;
+    width: 100%;
+    top: 50%;
+}
+.vinyl .inner .line{
+    position: absolute;
+    bottom: 37%;
+    width: 98%;
+    height: 2%;
+    background-color: rgb(231, 231, 231);
+}
+.vinyl .inner .bottom .song-name{
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    bottom: 5%;
+    font-size: 1em;
+
+}
+
+.vinyl .hole{
+    width: 16.66%;
+    height:16.66%;
+    background-color: #323232;
+    border-radius: 100%;
+}
+
+/* -----------INJECTED PAGE ------------*/
+#injected-page.hidden{
+    display: none;
+}
+#injected-page{
+    display: inline;
+    position: absolute;
+    z-index: 3;
+    width: 50%;
+    /* margin-left: var(--band-name-header-size); */
+    height: 100%;
+    top: 0;
+    left: 50%;                      /*Muevelo a la derecho un 50% de la pantalla*/
+    transform: translateX(-50%);    /*Esto es para mover el elemento un -50% respecto de su tamaño!!!*/
+    
+    /* animation: wait-a-bit 3s; */
+    animation: wait-a-bit 1s, injected-page-fade-in 1.5s 1s;
+}
+
+
+/* ANIMATIONS */
+@keyframes vinyl-rotate{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+@keyframes vinyl-fade-in{
+    from{
+        transform: translate(0, 100%);
+
+    }
+    to{
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes band-name-shadow-fade-in {
+    from{
+        text-shadow: 
+        0 0vh 0 grey, 
+        0 0vh 0 rgba(128, 128, 128, 0.8), 
+        0 0vh 0 rgba(128, 128, 128, 0.6),
+        0 0vh 0 rgba(128, 128, 128, 0.4),
+        0 0vh 0 rgba(128, 128, 128, 0.2),
+        0 0vh 0 rgba(128, 128, 128, 0.1);
+    }
+    to{
+        text-shadow:
+        0 9vh 0 grey, 
+        0 18vh 0 rgba(128, 128, 128, 0.8), 
+        0 27vh 0 rgba(128, 128, 128, 0.6),
+        0 36vh 0 rgba(128, 128, 128, 0.4),
+        0 45vh 0 rgba(128, 128, 128, 0.2),
+        0 54vh 0 rgba(128, 128, 128, 0.1);
+    }
+}
+@keyframes wait-a-bit{
+    from{
+        transform: translate(-50%, 100%);
+    }
+    to{
+        transform: translate(-50%, 100%);
+    }
+}
+@keyframes injected-page-fade-in{
+    from{
+        transform: translate(-50%, 100%);
+    }
+    to{
+        transform: translate(-50%, 0);
+    }
+}
+
+
+    /* --------------------LOAD COVER UP--------------- */
+@keyframes shadow-cover-up-background{
+    from{
+        height: 25vw;
+    }
+    to{
+        height:  var(--load-cover-width);
+    }
+}
+@keyframes shadow-cover-up-back-background{
+    from{
+        height:  var(--load-cover-width);
+    }
+    to{
+        height: 25vw;
+    }
+}
+
+
+@keyframes shadow-cover-up {
+    from {
+        text-shadow: 
+        0 1vw 0 grey, 
+        0 2vw 0 rgba(128, 128, 128, 0.8), 
+        0 4vw 0 rgba(128, 128, 128, 0.6),
+        0 6vw 0 rgba(128, 128, 128, 0.4),
+        0 8vw 0 rgba(128, 128, 128, 0.2),
+        0 10vw 0 rgba(128, 128, 128, 0.1);
+    }
+    to {
+        text-shadow: 
+        0 calc(var(--shad-offset) * 0 + var(--big-shad-space) * 1) 0 white, 
+        0 calc(var(--shad-offset) * 1 + var(--big-shad-space) * 0) 0 rgba(128, 128, 128, 0.8), 
+        0 calc(var(--shad-offset) * 2 + var(--big-shad-space) * 0) 0 rgba(128, 128, 128, 0.6),
+        0 calc(var(--shad-offset) * 3 + var(--big-shad-space) * 0) 0 rgba(128, 128, 128, 0.4),
+
+        0 calc(var(--shad-offset) * 0 + var(--big-shad-space) * 1) 0 white, 
+        0 calc(var(--shad-offset) * 1 + var(--big-shad-space) * 1) 0 rgba(128, 128, 128, 0.8), 
+        0 calc(var(--shad-offset) * 2 + var(--big-shad-space) * 1) 0 rgba(128, 128, 128, 0.6),
+        0 calc(var(--shad-offset) * 3 + var(--big-shad-space) * 1) 0 rgba(128, 128, 128, 0.4),
+
+        0 calc(var(--shad-offset) * 0 + var(--big-shad-space) * 2) 0 white, 
+        0 calc(var(--shad-offset) * 1 + var(--big-shad-space) * 2) 0 rgba(128, 128, 128, 0.8), 
+        0 calc(var(--shad-offset) * 2 + var(--big-shad-space) * 2) 0 rgba(128, 128, 128, 0.6),
+        0 calc(var(--shad-offset) * 3 + var(--big-shad-space) * 2) 0 rgba(128, 128, 128, 0.4);
+    }
+}
+
+@keyframes shadow-cover-up-back {
+    from {
+        text-shadow: 
+        0 calc(var(--shad-offset) * 0 + var(--big-shad-space) * 1) 0 white, 
+        0 calc(var(--shad-offset) * 1 + var(--big-shad-space) * 0) 0 rgba(128, 128, 128, 0.8), 
+        0 calc(var(--shad-offset) * 2 + var(--big-shad-space) * 0) 0 rgba(128, 128, 128, 0.6),
+        0 calc(var(--shad-offset) * 3 + var(--big-shad-space) * 0) 0 rgba(128, 128, 128, 0.4),
+
+        0 calc(var(--shad-offset) * 0 + var(--big-shad-space) * 1) 0 white, 
+        0 calc(var(--shad-offset) * 1 + var(--big-shad-space) * 1) 0 rgba(128, 128, 128, 0.8), 
+        0 calc(var(--shad-offset) * 2 + var(--big-shad-space) * 1) 0 rgba(128, 128, 128, 0.6),
+        0 calc(var(--shad-offset) * 3 + var(--big-shad-space) * 1) 0 rgba(128, 128, 128, 0.4),
+
+        0 calc(var(--shad-offset) * 0 + var(--big-shad-space) * 2) 0 white, 
+        0 calc(var(--shad-offset) * 1 + var(--big-shad-space) * 2) 0 rgba(128, 128, 128, 0.8), 
+        0 calc(var(--shad-offset) * 2 + var(--big-shad-space) * 2) 0 rgba(128, 128, 128, 0.6),
+        0 calc(var(--shad-offset) * 3 + var(--big-shad-space) * 2) 0 rgba(128, 128, 128, 0.4);
+    }
+    to {
+        text-shadow: 
+        0 1vw 0 grey, 
+        0 2vw 0 rgba(128, 128, 128, 0.8), 
+        0 4vw 0 rgba(128, 128, 128, 0.6),
+        0 6vw 0 rgba(128, 128, 128, 0.4),
+        0 8vw 0 rgba(128, 128, 128, 0.2),
+        0 10vw 0 rgba(128, 128, 128, 0.1);
+    }
+}
+
+/*---------------MEDIA QUERIES-------------*/
+@media (max-width: 768px) { /* PHONE */
+    
+    .background .band-name h1{
+        font-size: 6em;
+        /* transition: rotate 3s, margin-left 3s, margin-top 3s, width 3s; */
+    }
+    .background .band-name.unfocused h1{
+        font-size: 27cqw;
+        margin-top: -0.15em;
+    }
+    .background .band-name{
+        margin-top: 34%;
+    }
+    .background .band-name.unfocused{
+        margin-left: 0vw;
+        margin-top: 0vh;
+        rotate: 0deg;
+        width: 100vw;
+        transform-origin: top;
+        text-align: center;
+    }
+
+    .vinyl{
+        width:  90vw;
+        height: 90vw;
+    }
+    .vinyl.unfocused{
+        margin-bottom: -100vh;
+        margin-right: 0vw;
+        width:  100vw;
+        height: 100vw;
+        rotate: 0deg;
+    }
+    .vinyl .vinyl-nav{
+        font-size: 1.4rem;
+    }
+    .vinyl .inner .bottom .song-author{
+        font-size: 0.8rem;
+    }
+    .vinyl .inner .bottom .song-name{
+        font-size: 0.6rem;
+    }
+
+
+    #injected-page.hidden{
+        display: none;
+    }
+    #injected-page{
+        margin-top: 25%;
+        width: 100%;  
+        animation: wait-a-bit 1.5s, injected-page-fade-in 1.5s 1.5s;
+        height: calc(75vh - 25vw);
+    }
+
+
+
+
+    /*----------- ANIMATIONS --------------*/
+
+    @keyframes injected-page-fade-in{
+        from{
+            transform: translate(-150%, 0%);
+        }
+        to{
+            transform: translate(-50%, 0);
+        }
+    }
+    @keyframes wait-a-bit{
+        from{
+            transform: translate(-150%, 0);
+        }
+        to{
+            transform: translate(-150%, 0);
+        }
+    }
+                /* --LOAD COVER UP-- */
+    @keyframes shadow-cover-up-background{
+        from{
+            height: 0vh;
+        }
+        to{
+            height:  100vh;
+        }
+    }
+    @keyframes shadow-cover-up-back-background{
+        from{
+            height:  100vh;
+        }
+        to{
+            height: 0vh;
+        }
+    }
+    @keyframes shadow-cover-up {
+        from {
+            text-shadow: 
+            0 1vw 0 grey, 
+            0 2vw 0 rgba(128, 128, 128, 0.8), 
+            0 4vw 0 rgba(128, 128, 128, 0.6),
+            0 6vw 0 rgba(128, 128, 128, 0.4),
+            0 8vw 0 rgba(128, 128, 128, 0.2),
+            0 10vw 0 rgba(128, 128, 128, 0.1);
+        }
+        to {
+            text-shadow: 
+            0 calc(var(--shad-offset) * 0 + var(--big-shad-space) * 1) 0 white, 
+            0 calc(var(--shad-offset) * 1 + var(--big-shad-space) * 0) 0 rgba(128, 128, 128, 0.8), 
+            0 calc(var(--shad-offset) * 2 + var(--big-shad-space) * 0) 0 rgba(128, 128, 128, 0.6),
+            0 calc(var(--shad-offset) * 3 + var(--big-shad-space) * 0) 0 rgba(128, 128, 128, 0.4),
+    
+            0 calc(var(--shad-offset) * 0 + var(--big-shad-space) * 1) 0 white, 
+            0 calc(var(--shad-offset) * 1 + var(--big-shad-space) * 1) 0 rgba(128, 128, 128, 0.8), 
+            0 calc(var(--shad-offset) * 2 + var(--big-shad-space) * 1) 0 rgba(128, 128, 128, 0.6),
+            0 calc(var(--shad-offset) * 3 + var(--big-shad-space) * 1) 0 rgba(128, 128, 128, 0.4),
+    
+            0 calc(var(--shad-offset) * 0 + var(--big-shad-space) * 2) 0 white, 
+            0 calc(var(--shad-offset) * 1 + var(--big-shad-space) * 2) 0 rgba(128, 128, 128, 0.8), 
+            0 calc(var(--shad-offset) * 2 + var(--big-shad-space) * 2) 0 rgba(128, 128, 128, 0.6),
+            0 calc(var(--shad-offset) * 3 + var(--big-shad-space) * 2) 0 rgba(128, 128, 128, 0.4),
+
+            0 calc(var(--shad-offset) * 0 + var(--big-shad-space) * 3) 0 white, 
+            0 calc(var(--shad-offset) * 1 + var(--big-shad-space) * 3) 0 rgba(128, 128, 128, 0.8), 
+            0 calc(var(--shad-offset) * 2 + var(--big-shad-space) * 3) 0 rgba(128, 128, 128, 0.6),
+            0 calc(var(--shad-offset) * 3 + var(--big-shad-space) * 3) 0 rgba(128, 128, 128, 0.4),
+            
+            0 calc(var(--shad-offset) * 0 + var(--big-shad-space) * 4) 0 white, 
+            0 calc(var(--shad-offset) * 1 + var(--big-shad-space) * 4) 0 rgba(128, 128, 128, 0.8), 
+            0 calc(var(--shad-offset) * 2 + var(--big-shad-space) * 4) 0 rgba(128, 128, 128, 0.6),
+            0 calc(var(--shad-offset) * 3 + var(--big-shad-space) * 4) 0 rgba(128, 128, 128, 0.4);
+        }
+    }
+    
+    @keyframes shadow-cover-up-back {
+        from {
+            text-shadow: 
+            0 calc(var(--shad-offset) * 0 + var(--big-shad-space) * 1) 0 white, 
+            0 calc(var(--shad-offset) * 1 + var(--big-shad-space) * 0) 0 rgba(128, 128, 128, 0.8), 
+            0 calc(var(--shad-offset) * 2 + var(--big-shad-space) * 0) 0 rgba(128, 128, 128, 0.6),
+            0 calc(var(--shad-offset) * 3 + var(--big-shad-space) * 0) 0 rgba(128, 128, 128, 0.4),
+    
+            0 calc(var(--shad-offset) * 0 + var(--big-shad-space) * 1) 0 white, 
+            0 calc(var(--shad-offset) * 1 + var(--big-shad-space) * 1) 0 rgba(128, 128, 128, 0.8), 
+            0 calc(var(--shad-offset) * 2 + var(--big-shad-space) * 1) 0 rgba(128, 128, 128, 0.6),
+            0 calc(var(--shad-offset) * 3 + var(--big-shad-space) * 1) 0 rgba(128, 128, 128, 0.4),
+    
+            0 calc(var(--shad-offset) * 0 + var(--big-shad-space) * 2) 0 white, 
+            0 calc(var(--shad-offset) * 1 + var(--big-shad-space) * 2) 0 rgba(128, 128, 128, 0.8), 
+            0 calc(var(--shad-offset) * 2 + var(--big-shad-space) * 2) 0 rgba(128, 128, 128, 0.6),
+            0 calc(var(--shad-offset) * 3 + var(--big-shad-space) * 2) 0 rgba(128, 128, 128, 0.4),
+
+            0 calc(var(--shad-offset) * 0 + var(--big-shad-space) * 3) 0 white, 
+            0 calc(var(--shad-offset) * 1 + var(--big-shad-space) * 3) 0 rgba(128, 128, 128, 0.8), 
+            0 calc(var(--shad-offset) * 2 + var(--big-shad-space) * 3) 0 rgba(128, 128, 128, 0.6),
+            0 calc(var(--shad-offset) * 3 + var(--big-shad-space) * 3) 0 rgba(128, 128, 128, 0.4),
+            0 calc(var(--shad-offset) * 0 + var(--big-shad-space) * 4) 0 white, 
+            0 calc(var(--shad-offset) * 1 + var(--big-shad-space) * 4) 0 rgba(128, 128, 128, 0.8), 
+            0 calc(var(--shad-offset) * 2 + var(--big-shad-space) * 4) 0 rgba(128, 128, 128, 0.6),
+            0 calc(var(--shad-offset) * 3 + var(--big-shad-space) * 4) 0 rgba(128, 128, 128, 0.4);
+        }
+        to {
+            text-shadow: 
+            0 1vw 0 grey, 
+            0 2vw 0 rgba(128, 128, 128, 0.8), 
+            0 4vw 0 rgba(128, 128, 128, 0.6),
+            0 6vw 0 rgba(128, 128, 128, 0.4),
+            0 8vw 0 rgba(128, 128, 128, 0.2),
+            0 10vw 0 rgba(128, 128, 128, 0.1);
+        }
+    }
+}

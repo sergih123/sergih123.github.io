@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Band Name</title>
+    <link rel="stylesheet" href="styles/global.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/fonts.css">
+    <script defer src="./scripts/script.js"></script>
+    <!-- TO LOAD A FONT PRIORLY (cause before the user font would be flashing so I looked for an answer)
+    as displayed here https://stackoverflow.com/questions/4712242/wait-for-fonts-to-load-before-rendering-web-page
+    by user: Thiago C. S Ventura
+    it however doesn't work in Internet Explorer or Opera Mini: https://caniuse.com/link-rel-preload
+    -->
+    <link rel="preload" href="./fonts/bebas-neue-v14-latin-regular.woff2" as="font" type="font/woff2" crossorigin />
+    
+</head>
+<body>
+<!--     
+    <div class="header">
+        <nav class="main-navigation">
+            <a href="./index.html">Your Band</a>
+            <a href="./a11ly.html">Accessibility</a>
+        </nav>
+    </div> -->
+
+    <div class="background">
+        <div class="band-name">
+            <div class="transition-background"></div>
+            <h1>kraftklub</h1>
+        </div>
+    </div>
+
+    <div class="main-area">
+        
+        <span class="vinyl">
+            <nav class="vinyl-nav">
+                <a href="#" dest="./shop.html">Shop</a>
+                <a href="#" dest="./tours.html">Tours</a>
+                <a href="#" dest="./albums.html">Albums</a>
+                <a href="#" dest="./tickets.html">Tickets</a>
+            </nav>
+            <span class="outer">
+                <span class="grooves">
+                    <span class="groove"></span>
+                    <span class="groove"></span>
+                    <span class="groove"></span>
+                    <span class="groove"></span>
+                    <span class="groove"></span>
+                    <span class="groove"></span>
+                    <span class="groove"></span>
+                    <span class="groove"></span>
+                    <span class="groove"></span>
+                    <span class="groove"></span>
+                </span>
+                <span class="inner">
+                    <span class="line"></span>
+                    <span class="bottom">
+                        <p class="song-author">Kraftklub</p>
+                        <p class="song-name">Mirage (Radio Edit)</p>
+                    </span>
+                    <span class="hole"></span>
+                </span>
+            </span>
+        </span>
+    </div>
+    <div id="injected-page" class="hidden"></div>
+    
+</body>
+</html>
